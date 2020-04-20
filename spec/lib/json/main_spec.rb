@@ -4,7 +4,7 @@ require 'json'
 require_relative '../../../lib/json/main.rb'
 require_relative '../../../lib/json/downloader.rb'
 require_relative '../../../lib/json/mapper.rb'
-require_relative '../../../lib/json/sorter.rb'
+require_relative '../../../lib/sorter.rb'
 
 RSpec.describe Json::Main do
   describe '#print' do
@@ -27,8 +27,8 @@ RSpec.describe Json::Main do
     let(:downloader_instance) { instance_double(Json::Downloader) }
     let(:mapper_class) { class_double(Json::Mapper).as_stubbed_const }
     let(:mapper_instance) { instance_double(Json::Mapper) }
-    let(:sorter_class) { class_double(Json::Sorter).as_stubbed_const }
-    let(:sorter_instance) { instance_double(Json::Sorter) }
+    let(:sorter_class) { class_double(Sorter).as_stubbed_const }
+    let(:sorter_instance) { instance_double(Sorter) }
 
     before do
       allow(file_class).to receive(:read)

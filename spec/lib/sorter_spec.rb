@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../../lib/json/sorter.rb'
+require_relative '../../lib/sorter.rb'
 
-RSpec.describe Json::Sorter do
+RSpec.describe Sorter do
   describe '#call' do
     subject { described_class.new(feed).call }
 

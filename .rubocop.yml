@@ -83,6 +83,12 @@ Lint/AmbiguousBlockAssociation:
 Lint/NumberConversion:
   Enabled: true
 
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
 RSpec/AlignRightLetBrace:
   Enabled: false
 

@@ -3,7 +3,7 @@
 require 'json'
 require_relative './downloader'
 require_relative './mapper'
-require_relative './sorter'
+require_relative '../sorter'
 
 module Json
   class Main
@@ -42,7 +42,7 @@ module Json
     end
 
     def sort
-      @parsed = Json::Sorter.new(@parsed).call
+      @parsed = Sorter.new(@parsed).call
     end
 
     def cleanup

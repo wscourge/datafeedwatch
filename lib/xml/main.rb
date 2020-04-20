@@ -2,12 +2,10 @@
 
 module Xml
   class Main
-    def initialize(url)
-      
-    end
+    def initialize(url); end
 
     def print
-      puts 'Priniting XML'
+      puts('Priniting XML')
     end
   end
 end

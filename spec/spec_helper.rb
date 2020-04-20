@@ -13,8 +13,6 @@ SimpleCov.start do
   track_files('lib/**/*.rb')
 end
 
-require 'pry'
-
 Dir['./spec/custom/**/*.rb'].sort.each { |file| require file }
 Dir['./spec/shared_examples/**/*.rb'].sort.each { |file| require file }
 Dir['./spec/shared_contexts/**/*.rb'].sort.each { |file| require file }

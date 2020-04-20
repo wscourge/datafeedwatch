@@ -21,5 +21,11 @@ end
 Main.new(
   varnish_path: './varnish.log',
   xml_url: 'https://feeds.datafeedwatch.com/8946/87b1895fcf293e81cc27af931aa0c3c6d6b580d6.xml',
-  json_ftp: 'ftp://dfw_test:RidetKoj0@ftp.datafeedwatch.com/feed.json'
+  json_ftp: {
+    # 'ftp://dfw_test:RidetKoj0@ftp.datafeedwatch.com/feed.json'
+    username: 'dfw_test',
+    password: 'RidetKoj0',
+    domain: 'ftp.datafeedwatch.com',
+    filename: 'feed.json'
+  }
 ).print

@@ -20,6 +20,7 @@ module Json
       map
       sort
       cleanup
+      @parsed
     end
 
     private

@@ -9,9 +9,9 @@ module Xml
     def call
       @feed['rss']['channel']['item'].map! do |record|
         {
+          price: Float(record['price'].split(' ').first),
           title: record['title'],
-          url: record['link'],
-          price: Float(record['price'].split(' ').first)
+          url: record['link']
         }
       end
     end

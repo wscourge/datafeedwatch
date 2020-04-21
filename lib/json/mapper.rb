@@ -9,9 +9,9 @@ module Json
     def call
       @feed.map! do |record|
         {
+          price: Float(record['price']),
           title: record['title'],
-          url: record['full_url'],
-          price: Float(record['price'])
+          url: record['full_url']
         }
       end
     end

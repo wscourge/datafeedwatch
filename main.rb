@@ -1,20 +1,48 @@
 # frozen_string_literal: true
 
+require 'tty-table'
 require_relative './lib/varnish/main'
 require_relative './lib/xml/main'
 require_relative './lib/json/main'
 
 class Main
+  PRODUCT_HEADERS = %w[Price Title URL].freeze
+
   def initialize(varnish_path:, xml_url:, json_ftp:)
-    @varnish = Varnish::Main.new(varnish_path)
-    @xml = Xml::Main.new(xml_url)
-    @json = Json::Main.new(json_ftp)
+    @varnish = Varnish::Main.new(varnish_path).print
+    @xml = Xml::Main.new(xml_url).print
+    @json = Json::Main.new(**json_ftp).print
   end
 
   def print
-    @varnish.print
-    @xml.print
-    @json.print
+    print_varnish
+    print_xml
+    print_json
+  end
+
+  private
+
+  def print_varnish
+    print_logs(:hosts)
+    print_logs(:files)
+  end
+
+  def print_xml
+    puts('XML products')
+    print_products(@xml)
+  end
+
+  def print_json
+    puts('JSON products')
+    print_products(@json)
+  end
+
+  def print_products(hash)
+    puts(TTY::Table.new(header: PRODUCT_HEADERS, rows: hash.map(&:values)).render(:unicode))
+  end
+
+  def print_logs(key)
+    puts(TTY::Table.new(header: ["Varnish #{key}"], rows: @varnish[key].map { |array| [array] }).render(:unicode))
   end
 end
 

@@ -1,0 +1,215 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - tmp/**/*
+    - vendor/**/*
+
+Bundler/GemComment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/CyclomaticComplexity:
+  Max: 6
+  Enabled: true
+  Exclude:
+    - template.rb
+
+Metrics/MethodLength:
+  Max: 15
+
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    attribute_macros:
+      - attr_reader
+      - attr_writer
+      - attr_accessor
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - public_attribute_macros
+    - public_delegate
+    - initializer
+    - public_methods
+    - public_class_methods
+    - protected_attribute_macros
+    - protected_delegate
+    - protected_methods
+    - private_attribute_macros
+    - private_delegate
+    - private_methods
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 120
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+  EnforcedStyle: same_line
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/NumberConversion:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+RSpec/AlignRightLetBrace:
+  Enabled: false
+
+RSpec/AlignLeftLetBrace:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: true
+
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 6
+
+RSpec/MultipleExpectations:
+  Enabled: true
+  Max: 5
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/SubjectStub:
+  Enabled: true
+
+Naming/FileName:
+  Enabled: true
+
+Naming/MethodParameterName:
+  AllowedNames: io, id, to, by, on, in, at, ip, db, os, ci
+
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect: map
+    collect!: map!
+    inject: reduce
+    detect: find
+    find_all: select
+
+Style/ConstantVisibility:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+      
+Style/ImplicitRuntimeError:
+  Enabled: true
+
+Style/InlineComment:
+  Enabled: true
+
+Style/IpAddresses:
+  Enabled: true
+  AllowedAddresses:
+    - '::'
+    - '127.0.0.1'
+    - '6.0.2.2'
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IgnoredMethods:
+    - describe
+    - context
+    - it
+    - to
+    - not_to
+    - require
+    - require_relative
+    - shared_examples
+    - shared_context
+    - define
+    - yield
+    - expect_with
+    - mock_with
+  Exclude:
+    - 'Gemfile'
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/MissingElse:
+  Enabled: false
+
+Style/MultilineMethodSignature:
+  Enabled: true
+
+Style/OptionHash:
+  Enabled: true
+
+Style/ReturnNil:
+  Enabled: true
+
+Style/Send:
+  Enabled: true
+
+Style/SingleLineBlockParams:
+  Enabled: true
+  Methods:
+    - reduce:
+       - accumlator
+       - element
+
+Style/StringHashKeys:
+  Enabled: true
